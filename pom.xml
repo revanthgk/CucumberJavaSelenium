@@ -119,8 +119,7 @@
 					<version>${maven.surefire.version}</version>
 					<configuration>
 						<suiteXmlFiles>
-							<suiteXmlFile>testng-Regression.xml</suiteXmlFile>
-							<suiteXmlFile>testng-Smoke.xml</suiteXmlFile>
+							<suiteXmlFile>${suiteFile}</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
