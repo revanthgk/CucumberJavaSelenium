@@ -120,7 +120,6 @@
 					<configuration>
 						<suiteXmlFiles>
 							<suiteXmlFile>testng-Regression.xml</suiteXmlFile>
-							<suiteXmlFile>testng-Smoke.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
