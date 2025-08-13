@@ -1,5 +1,5 @@
 	Feature: Login Page Testing.
-		@regression @smoke
+		@regression @smoke @web
 		Scenario Outline: Login with Valid Credentials
 		Given I Launch the Login Page
 		When I enter the username <username> and password <password>

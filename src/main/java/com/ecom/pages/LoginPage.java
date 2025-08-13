@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.ecom.utils.WaitUtil;
+
 public class LoginPage {
 	
 	private WebDriver driver;
@@ -28,14 +30,10 @@ public class LoginPage {
 	private WebElement loginButton;
 	
 	public void enterUserName(String username) {
-		new WebDriverWait(driver, Duration.ofSeconds(10))
-        .until(ExpectedConditions.visibilityOf(userName));
-		userName.sendKeys(username);
+		WaitUtil.waitForVisible(driver, userName).sendKeys(username);
 	}
 	public void enterPassword(String pwd) {
-		new WebDriverWait(driver, Duration.ofSeconds(10))
-        .until(ExpectedConditions.visibilityOf(password));
-		password.sendKeys(pwd);
+		WaitUtil.waitForVisible(driver, password).sendKeys(pwd);
 	}
 	
 	public void clickLoginButton() {

@@ -27,8 +27,8 @@ public class GetProducts {
 	}
 
 	@Then("I expect to see the statuscode as {int}")
-	public void i_expect_to_see_the_statuscode_as(Integer int1) {
-		Assertions.assertEquals(response.getStatusCode(), 200);
+	public void i_expect_to_see_the_statuscode_as(int statuscode) {
+		Assertions.assertEquals(response.getStatusCode(), statuscode);
 	}
 	
 	@Then("I validate the rate of product {} as {}")
