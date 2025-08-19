@@ -121,6 +121,9 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>${suiteFile}</suiteXmlFile>
 						</suiteXmlFiles>
+						<systemPropertyVariables>
+							<browser>${browser}</browser>
+						</systemPropertyVariables>
 					</configuration>
 				</plugin>
 

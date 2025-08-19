@@ -15,9 +15,6 @@ public class ConfigReader {
 			e.printStackTrace();
 		}
 	}
-	public static BrowserType getBrowser() {
-		return BrowserType.valueOf(props.getProperty("browser").toUpperCase());
-	}
 	public static RunEnviroment getRunEnviroment() {
 		return RunEnviroment.valueOf(props.getProperty("runenvironment").toUpperCase());
 	}

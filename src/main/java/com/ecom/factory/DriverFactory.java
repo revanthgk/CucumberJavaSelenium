@@ -9,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import com.ecom.utils.BrowserType;
 import com.ecom.utils.ConfigReader;
 import com.ecom.utils.RunEnviroment;
 
@@ -22,14 +21,14 @@ public class DriverFactory {
         scenarioName.set(name);
     }
 	public WebDriver initBroswer() {
-		BrowserType browser = ConfigReader.getBrowser();
+		String browser = System.getProperty("browser","chrome").toUpperCase();
 		RunEnviroment env = ConfigReader.getRunEnviroment();
 		if(env == RunEnviroment.LOCAL) {
-			if (browser == BrowserType.CHROME) {
+			if (browser.equals("CHROME")) {
 				driver.set(new ChromeDriver());
-			} else if (browser == BrowserType.FIREFOX) {
+			} else if (browser.equals("FIREFOX")) {
 				driver.set(new FirefoxDriver());
-			} else if (browser == BrowserType.SAFARI) {
+			} else if (browser.equals("SAFARI")) {
 				driver.set(new SafariDriver());
 			} else {
 				throw new IllegalArgumentException("Unsupported browser: " + browser);
@@ -37,7 +36,7 @@ public class DriverFactory {
 		} else if(env == RunEnviroment.SAUCELABS ) {
 			try {
 				DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setCapability("browserName", browser.name().toLowerCase());
+				capabilities.setCapability("browserName", browser.toLowerCase());
 				capabilities.setCapability("browserVersion", "latest");
 				
 				Map<String, Object> sauceOptions = new HashMap<>();
