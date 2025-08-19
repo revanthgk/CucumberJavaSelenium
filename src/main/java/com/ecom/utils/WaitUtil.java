@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.ecom.factory.DriverFactory;
+
 public class WaitUtil {
 	private static final int Default_Wait_Time =10;
 	

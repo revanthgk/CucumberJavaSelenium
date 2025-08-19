@@ -21,4 +21,8 @@ public class ConfigReader {
 	public static RunEnviroment getRunEnviroment() {
 		return RunEnviroment.valueOf(props.getProperty("runenvironment").toUpperCase());
 	}
+	
+	public static String getUrl() {
+		return props.getProperty("URL");
+	}
 }
